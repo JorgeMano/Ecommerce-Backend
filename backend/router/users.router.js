@@ -3,21 +3,21 @@ const express = require('express');
 const {
     createNewUser,
     loginUser,
-    getAllProducts,
+    getAllUsers,
     updateUser,
     disableUser,
     getAllPurchases,
-    getPurchaseById
+    getUserById
 } = require('../controllers/users.controller'); 
 
 const router = express.Router();
 
 router.post('/', createNewUser);
 router.post('/login', loginUser);
-router.get('/', getAllProducts);
+router.get('/', getAllUsers);
 router.patch('/:id', updateUser);
 router.delete('/:id', disableUser);
 router.get('/', getAllPurchases);
-router.get('/:id', getPurchaseById);
+router.get('/:id', getUserById);
 
 module.exports = { usersRouter: router };
